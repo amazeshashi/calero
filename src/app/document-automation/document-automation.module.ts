@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { DocumentAutomationRoutingModule } from './document-automation-routing.module';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    DocumentAutomationRoutingModule
+    DocumentAutomationRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     InvoiceComponent,

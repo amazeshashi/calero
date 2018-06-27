@@ -54,74 +54,55 @@
     <div class="row tablesection">
       <div class="col-md-12">
         <div class="tableblock">
-          <table class="table invoivetable">
-            <thead>
-              <tr class="d-flex">
-                <th class="colm-2">Item ID</th>
-                <th class="colm-4">Description</th>
-                <th class="colm-2">Unit</th>
-                <th class="colm-3">Price Unit/Qty</th>
-                <th class="colm-2">Tax %</th>
-                <th class="colm-3 txtbold">Total (inc tax)</th>
-                <th class="colm-1"></th>
-              </tr>
-              <tr class="d-flex tr_clone">
-                <td class="colm-2">
-                  <input type="text" value="101" />
-                </td>
-                <td class="colm-4">
-                  <input type="text" value="Something about the product" />
-                </td>
-                <td class="colm-2">
-                  <input type="text" value="5" />
-                </td>
-                <td class="colm-3">
-                  <input type="text" value="10" />
-                </td>
-                <td class="colm-2">
-                  <input type="text" value="5" />
-                </td>
-                <td class="colm-3">
-                  <p>52.5 USD</p>
-                </td>
-                <td class="colm-1">
-                  <span>&times;</span>
-                </td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="d-flex tr_clone" *ngFor="let field of fieldArray; let i = index">
-                <td class="colm-2">
-                  <input type="text" value="" />
-                </td>
-                <td class="colm-4">
-                  <input type="text" value="" />
-                </td>
-                <td class="colm-2">
-                  <input type="text" value="" />
-                </td>
-                <td class="colm-3">
-                  <input type="text" value="" />
-                </td>
-                <td class="colm-2">
-                  <input type="text" value="" />
-                </td>
-                <td class="colm-3">
-                  <p>0.0 USD</p>
-                </td>
-                <td class="colm-1">
-                  <span (click)="deleteFieldValue(i)">&times;</span>
-                </td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <button class="btn btn-default purplebtn" (click)="addFieldValue()" type="button">+ Add More Product</button>
-              </tr>
+          <form [formGroup]="invoiceForm">
+            <div formArrayName="itemRows">
+              <table class="table invoivetable">
+                <thead>
+                  <tr class="d-flex">
+                    <th class="colm-2">Item ID</th>
+                    <th class="colm-4">Description</th>
+                    <th class="colm-2">Unit</th>
+                    <th class="colm-3">Price Unit/Qty</th>
+                    <th class="colm-2">Tax %</th>
+                    <th class="colm-3 txtbold">Total (inc tax)</th>
+                    <th class="colm-1"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="d-flex tr_clone" *ngFor="let itemrow of invoiceForm.controls.itemRows.controls; let i=index" [formGroupName]="i">
+                    <td class="colm-2">
+                      <input type="text" value="" formControlName="item_id" />
+                    </td>
+                    <td class="colm-4">
+                      <input type="text" value="" formControlName="item_title"/>
+                    </td>
+                    <td class="colm-2 form-group">
+                      <input type="text" name="unit" formControlName="unit" class="form-control" value="" />
+                    </td>
+                    <td class="colm-3 form-group">
+                      <input type="text" name="price" formControlName="price" class="form-control" value="" />
+                    </td>
+                    <td class="colm-2">
+                      <input type="text" value="" formControlName="tax"/>
+                    </td>
+                    <td class="colm-3">
+                      <p>{{ (invoiceForm.value.itemRows[i].unit * invoiceForm.value.itemRows[i].price) + ( (invoiceForm.value.itemRows[i].unit * invoiceForm.value.itemRows[i].price) * invoiceForm.value.itemRows[i].tax / 100) }} USD</p>
+                    </td>
+                    <td class="colm-1">
+                      <span (click)="deleteFieldValue(i)">&times;</span>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <button class="btn btn-default purplebtn" (click)="addFieldValue()" type="button">+ Add More Product</button>
+                  </tr>
 
-            </tfoot>
+                </tfoot>
 
-          </table>
+              </table>
+            </div>
+          </form>
         </div>
       </div>
     </div>

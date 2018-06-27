@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-invoice',
@@ -8,24 +9,42 @@ import * as $ from 'jquery';
 })
 export class InvoiceComponent implements OnInit {
 
-  constructor() { }
+  public invoiceForm: FormGroup;
 
-  private fieldArray: Array<any> = [];
-  private newAttribute: any = {};
+  constructor(private _fb: FormBuilder) {
+  }
+
+  initItemRows() {
+    return this._fb.group({
+      item_id : [''],
+      item_title: [''],
+      unit: [0],
+      price: [0],
+      tax: [0],
+    });
+  }
+
+
+  // public invoice = {
+  //   unit: "",
+  //   price: ""
+  // }
 
   addFieldValue() {
-    this.fieldArray.push(this.newAttribute)
-    this.newAttribute = {};
-}
+    const control = <FormArray>this.invoiceForm.controls['itemRows'];
+    control.push(this.initItemRows());
+  }
 
   deleteFieldValue(index) {
-      this.fieldArray.splice(index, 1);
+    console.log(index);
+    const control = <FormArray>this.invoiceForm.controls['itemRows'];
+    control.removeAt(index);
   }
 
   ngOnInit() {
 
-    $('.invoivetable td a').click(function(event){
-      event.preventDefault();
+    this.invoiceForm = this._fb.group({
+      itemRows: this._fb.array([this.initItemRows()])
     });
 
   }
