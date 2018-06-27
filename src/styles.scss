@@ -38,6 +38,7 @@ body.show_sidebar .main {
     margin-left: 25%;
     width: 75%;
 }
+
 .site-container{
     padding-right: 15px;
     padding-left: 15px;
@@ -413,6 +414,12 @@ table.invoivetable{
     table.invoivetable tr .colm-3 {
         flex: 0 0 17%;
         max-width: 16%;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .leftsidebar{
+        width:30%;
     }
 }
 
