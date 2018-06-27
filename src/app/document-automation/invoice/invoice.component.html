@@ -1,0 +1,145 @@
+<div class="mainblock">
+  <div class="site-container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav aria-label="breadcrumb" class="breadcrumblink">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Document Automation</li>
+            <li class="breadcrumb-item active" aria-current="page">Invoice</li>
+            <li class="breadcrumb-item active" aria-current="page">Create Invoice</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <h4 class="tableheading">Create Invoice</h4>
+      </div>
+      <div class="col-md-8 col-sm-12 align-left">
+        <button type="button" class="btn btn-default purplebtn">Inbox</button>
+        <button type="button" class="btn btn-default mintgreenbtn">Sent Invoice</button>
+      </div>
+    </div>
+
+    <div class="row userfield">
+      <div class="col-md-7 col-sm-12">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <label>Invoice To</label>
+            <input class="form-control" placeholder="Enter valid email" type="text">
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <label>Invoice Number</label>
+            <input class="form-control" placeholder="Enter Invoice Number" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-12 align-left">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <label>Invoice To</label>
+            <input class="form-control" placeholder="Enter valid email" type="text">
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <label>Invoice Number</label>
+            <select class="selectpicker form-control" data-style="btn-info">
+              <option>USD ($)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row tablesection">
+      <div class="col-md-12">
+        <div class="tableblock">
+          <table class="table invoivetable">
+            <thead>
+              <tr class="d-flex">
+                <th class="colm-2">Item ID</th>
+                <th class="colm-4">Description</th>
+                <th class="colm-2">Unit</th>
+                <th class="colm-3">Price Unit/Qty</th>
+                <th class="colm-2">Tax %</th>
+                <th class="colm-3 txtbold">Total (inc tax)</th>
+                <th class="colm-1"></th>
+              </tr>
+              <tr class="d-flex tr_clone">
+                <td class="colm-2">
+                  <input type="text" value="101" />
+                </td>
+                <td class="colm-4">
+                  <input type="text" value="Something about the product" />
+                </td>
+                <td class="colm-2">
+                  <input type="text" value="5" />
+                </td>
+                <td class="colm-3">
+                  <input type="text" value="10" />
+                </td>
+                <td class="colm-2">
+                  <input type="text" value="5" />
+                </td>
+                <td class="colm-3">
+                  <p>52.5 USD</p>
+                </td>
+                <td class="colm-1">
+                  <span>&times;</span>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="d-flex tr_clone" *ngFor="let field of fieldArray; let i = index">
+                <td class="colm-2">
+                  <input type="text" value="" />
+                </td>
+                <td class="colm-4">
+                  <input type="text" value="" />
+                </td>
+                <td class="colm-2">
+                  <input type="text" value="" />
+                </td>
+                <td class="colm-3">
+                  <input type="text" value="" />
+                </td>
+                <td class="colm-2">
+                  <input type="text" value="" />
+                </td>
+                <td class="colm-3">
+                  <p>0.0 USD</p>
+                </td>
+                <td class="colm-1">
+                  <span (click)="deleteFieldValue(i)">&times;</span>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <button class="btn btn-default purplebtn" (click)="addFieldValue()" type="button">+ Add More Product</button>
+              </tr>
+
+            </tfoot>
+
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row footersection">
+      <div class="col-md-5"></div>
+      <div class="col-md-3 col-sm-6">
+        <p>Sub-total excle tax </p>
+        <h6>Total</h6>
+        <button class="btn btn-default purplebtn" type="button">Preview</button>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <p>100 USD</p>
+        <h6>105 USD</h6>
+        <button class="btn btn-default mintgreenbtn" type="button">Send</button>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</div>

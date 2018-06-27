@@ -1,0 +1,50 @@
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url('assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url('assets/fonts/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('assets/fonts/Montserrat-Bold.ttf');
+}
+
+
+
+// Fonts Family
+$fontbold : Montserrat-Bold;
+$fontsemibold : Montserrat-SemiBold;
+$fontregular : Montserrat-Regular;
+
+// Fonts Size
+
+$font-12 : 12px;
+$font-14 : 14px;
+$font-16 : 16px;
+$font-18 : 18px;
+$font-20 : 20px;
+$font-22 : 22px;
+$font-24 : 24px;
+$font-26 : 26px;
+$font-28 : 28px;
+$font-30 : 30px;
+$font-32 : 32px;
+$font-34 : 34px;
+$font-36 : 36px;
+
+// Fonts Colors
+
+$blue : #211F49;
+$mintgreen : #22E18E;
+$purple : #8680FF;
+$lightpurple : #E8E7FF;
+$lightgrey : #C4C4C4;
+$red : #E8155A;
+$bodycolor : #F9F9F9;
+$white : #fff;
+$borderclor : #AFB8C1;

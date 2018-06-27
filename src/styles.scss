@@ -1,0 +1,424 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'style/_variables.scss';
+
+body{
+    background-color: $bodycolor !important;
+}
+.leftsidebar{
+    width:25%;
+    float: left;
+    background: #E8E7FF;
+    bottom: 0;
+    right: 100%;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+body.show_sidebar .leftsidebar { right: 75%; }
+
+.txtbold{
+    font-family: $fontsemibold !important;
+}
+.main{
+    width:100%;
+    float: none;
+    padding-bottom: 70px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+body.show_sidebar .main {
+    margin-left: 25%;
+    width: 75%;
+}
+.site-container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1220px;
+}
+.site-sidebar{
+    .sidebarmenus{
+        padding-left: 30px;
+    }
+    width:100%;
+    float:left;
+    background-color: $lightpurple;
+    position: relative;
+    z-index: 9;
+    .site-logo{
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 50px;
+    }
+    .navbar-nav{
+        display: block;
+        width:100%;
+        .dropdown-toggle::after {
+            content: none;
+        }
+        .dropdown-toggle span{
+            position: relative;
+            top: 2px;
+            left: 25px;
+        }
+        li{
+            display: block;
+            width: 100%;
+            margin-bottom:5px;
+            i{
+                color:$blue;
+                margin-right: 6px;
+                font-size: $font-20;
+            }
+            a{
+                color:$blue;
+                display: inline-block;
+                font-family: $fontsemibold;
+            }
+        }
+        .dropdown-menu{
+            position: inherit !important;
+            background-color: transparent;
+            border: none;
+            a{
+                text-indent: 30px;
+            }
+            a:hover{
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+
+//  Main Header
+
+.siteheader{
+    border-bottom: 3px solid #F4F4F4;
+    padding: 15px 0 0;
+    padding-top: 15px;
+    position: relative;
+    .navbar-toggler{
+        img{
+            max-height: 30px;
+            margin-top: 0px;
+        }
+    }
+    #navbarHeader{
+        position: absolute;
+    }
+    .leftbar{
+        text-align: right;
+        a.bellicon{
+            color:$lightgrey;
+            display: inline-block;
+            margin-right: 30px;
+            font-size: $font-20;
+        }
+        p{
+            display: inline-block;
+            margin-bottom: 0;
+            img{
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            a{
+                color:$lightgrey;
+                font-size: $font-30;
+            }
+            a:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// invoice scss
+
+.mainblock{
+    .tableheading{
+        font-family: $fontsemibold;
+        font-size: $font-20;
+        padding-top: 25px;
+    }
+    padding: 20px 0% 0 15px;
+    padding-top: 20px;
+    .align-left{
+        text-align: right;
+        .mintgreenbtn{
+            margin-left: 15px;
+        }
+    }
+    button.btn{
+        color: $white;
+        font-family: $fontsemibold;
+        padding: 10px;
+        min-width: 200px;
+        border-radius: 0;
+    }
+    .purplebtn{
+        background-color: $purple;
+    }
+    .mintgreenbtn{
+        background-color: $mintgreen;
+    }
+    .breadcrumblink ol{
+        background-color: transparent;
+    }
+    .breadcrumblink .breadcrumb-item + .breadcrumb-item::before {
+        color: $lightgrey;
+        content: ">";
+    }
+    .breadcrumblink ol{
+        padding-left:0;
+    }
+    .breadcrumblink ol li{
+        color:$lightgrey;
+        font-family: $fontsemibold;
+        background-color: transparent;
+    }
+    .userfield{
+        padding-top:40px; 
+        label{
+            font-family: $fontsemibold;
+            color:$blue;
+        }
+        input{
+            border: 1px solid $borderclor;
+            background-color: $white; 
+            color: $blue;
+            font-family: $fontsemibold;
+            border-radius: 0;
+            padding: 8px; 
+        }
+        input::-webkit-input-placeholder {
+            color: $lightgrey;
+            font-family : $fontregular;
+        }
+        input::-moz-placeholder { 
+            color: $lightgrey;
+            font-family : $fontregular;
+        }
+        input:-ms-input-placeholder {
+            color: $lightgrey;
+            font-family : $fontregular;
+        }
+        input:-moz-placeholder { 
+            color: $lightgrey;
+            font-family : $fontregular;
+        }
+        select{
+            border: none;
+            background-color: $white; 
+            font-family: $fontsemibold;
+            color:$blue;
+            border-radius: 0;
+            padding: 8px; 
+            border: 1px solid $borderclor;
+        }
+    }
+    .footersection{
+        h6{
+            font-family: $fontsemibold;
+            color:$blue;
+            margin-bottom: 35px;
+        }
+        p{
+            font-family : $fontregular;
+            color:$blue;
+            font-size: $font-18;
+            
+        }
+        .purplebtn{
+            min-width: 160px;
+        }
+        .mintgreenbtn{
+            min-width: 160px;
+        }
+    }
+}
+
+// Invoice table
+table.invoivetable{
+    margin-top: 50px;
+    tr{
+        .colm-3{
+            padding-bottom: 10px;
+            -ms-flex: 0 0 14%;
+            flex: 0 0 14%;
+            max-width: 14%;
+        }
+        .colm-2{
+            padding-bottom: 10px;
+            -ms-flex: 0 0 11%;
+            flex: 0 0 11%;
+            max-width: 11%;
+        }
+        .colm-1{
+            padding-bottom: 10px;
+            -ms-flex: 0 0 9%;
+            flex: 0 0 9%;
+            max-width: 9%;
+        }
+        .colm-4{
+            padding-bottom: 10px;
+            -ms-flex: 0 0 30%;
+            flex: 0 0 30%;
+            max-width: 30%;
+        }
+        th{
+            color:$blue;
+            font-family : $fontregular;
+            font-size: $font-14;
+            border: none;
+            padding:0;
+        }
+        
+        td{
+            padding:10px 20px 0 0;
+            border: none;
+            input{
+                width:100%;
+                background-color: $white;
+                border: 1px solid $borderclor;
+                color:$blue;
+                padding:13px 10px;
+                font-size: $font-12;
+                font-family: $fontsemibold;
+            }
+            span{
+                color:$red;
+                font-family: $fontsemibold;
+                border: 2px solid #E8155A;
+                border-radius: 50%;
+                padding: 0px 5px 0px;
+                font-size: $font-18;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            p{
+                font-size: $font-12;
+                font-weight: bold;
+                padding-top: 7px;
+            }
+        }
+        td:last-child{
+            text-align: right;
+        }
+    }
+    tfoot{
+        tr{
+            button.purplebtn{
+                color:$blue;
+                margin-top: 20px;
+                background-color: transparent;
+                border: 1px solid $purple;
+                font-size: $font-14;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 1180px) {
+    .site-sidebar .sidebarmenus {
+        padding-left: 15px;
+    }
+    .site-sidebar .navbar-nav li i {
+        font-size: $font-18;
+        margin-right:0;
+    }
+}
+@media only screen and (max-width: 1080px) {
+    .site-sidebar .navbar-nav li a {
+        font-size: $font-14;
+    }
+    .mainblock .footersection p {
+        font-size: $font-16;
+    }
+    body.show_sidebar table.table{
+        max-width: 120%;
+        width: 120%;
+    }
+    body.show_sidebar .tableblock{
+        overflow: auto;
+    }
+    .footersection{
+        margin-top:30px;
+    }
+    .footersection .col-md-5, .footersection .col-md-1{
+        display:none;
+    }
+    .footersection .col-md-3, .footersection .col-md-3{
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .mainblock button.btn {
+        min-width: 50px;
+        padding:10px 25px;
+    }
+    .mainblock .userfield label {
+        font-size: $font-14;
+    }
+
+
+
+}
+@media only screen and (max-width: 980px) {
+    .site-sidebar .navbar-nav li a{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .mainblock .userfield .col-sm-12{
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .mainblock .align-left {
+        text-align: left;
+        margin-top:10px;
+    }
+}
+
+
+@media only screen and (max-width: 930px) {
+    body table.table{
+        max-width: 115%;
+        width: 115%;
+    }
+    body .tableblock{
+        overflow: auto;
+    }
+    table.invoivetable tr .colm-4 {
+        flex: 0 0 24%;
+        max-width: 24%;
+    }
+    table.invoivetable tr .colm-3 {
+        flex: 0 0 17%;
+        max-width: 16%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .mainblock .align-left {
+        text-align: left;
+        margin-top:10px;
+    }
+}
