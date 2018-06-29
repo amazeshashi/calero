@@ -25,18 +25,13 @@ export class InvoiceComponent implements OnInit {
   }
 
 
-  // public invoice = {
-  //   unit: "",
-  //   price: ""
-  // }
-
   addFieldValue() {
     const control = <FormArray>this.invoiceForm.controls['itemRows'];
     control.push(this.initItemRows());
   }
 
   deleteFieldValue(index) {
-    console.log(index);
+    // console.log(index);
     const control = <FormArray>this.invoiceForm.controls['itemRows'];
     control.removeAt(index);
   }
